@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/>
+    <link rel="stylesheet" href="etch.css">
+    
+  </head>
+
+  <body>
+    <div class="header">
+    <h1>Paint</h1>
+  </div>
+  <div class="gridbox">
+    <div class="gridContainer" id="gridContainer"></div>
+  </div>
+    <div class="buttons">
+        <div class="color-picker"></div>
+        <div class="slidecontainer">
+            <input type="range" min="16" max="128" value="128" step="25" class="slider" id="myRange" >
+            <div id="slider-value">0</div>
+            
+          </div>
+      <button class="blackBtn" id="blackBtn">Black</button>
+      <button class="eraserBtn" id="eraserBtn">Eraser</button>
+      <button class="rainbow" id="rainbow">Random</button>
+      <button class="reset" id="reset">Reset</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <script src="etch.js"></script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: sans-serif;
+    
+    height: 100%;
+  }
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  h1{
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  .gridbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .gridContainer {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    
+    
+  
+    height: 800px;
+    width: 800px;
+  }
+  .gridChild {
+    
+    height: 100%;
+    width: 100%;
+  }
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  .button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .color-picker{
+    border-radius: 10%;
+    padding: 10%;
+  }
+  
+  .pcr-button{
+    padding: 10%;
+  }
