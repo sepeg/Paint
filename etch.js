@@ -1,13 +1,42 @@
-const reset = document.getElementById('reset')
+const resetBtn = document.getElementById('reset')
 const rangeValue = document.getElementById('myRange');
 const blackBtn = document.getElementById("blackBtn");
-let greyBtn = document.getElementById("greyBtn");
+const greyBtn = document.getElementById("greyBtn");
 const eraserBtn = document.getElementById("eraserBtn");
 const randomBtn = document.getElementById('rainbow')
-
+const body = document.getElementById('body');
+const grid = document.querySelector("#gridContainer");
+const displayValue = document.getElementById('slider-value')
 let thisStyle = 'black'
 const startSize = rangeValue.value;
+
 let mousedown = true;
+
+function slider(){
+    displayValue.innerHTML = startSize + 'x' + startSize
+    let value = rangeValue.value
+    if (value == 16){
+        displayValue.innerHTML = rangeValue.value + 'x' + rangeValue.value
+        grid.innerHTML = ''
+        return createGrid(value)
+    }else if(value == 32){
+        displayValue.innerHTML = rangeValue.value + 'x' + rangeValue.value
+        grid.innerHTML = ''
+        return createGrid(value)
+        
+    }else if(value == 64){
+        displayValue.innerHTML = rangeValue.value + 'x' + rangeValue.value
+        grid.innerHTML = ''
+        return createGrid(value)
+ 
+    }else if(value == 128){
+        displayValue.innerHTML = rangeValue.value + 'x' + rangeValue.value
+        grid.innerHTML = ''
+        return createGrid(value)
+        
+    }
+    
+}
 
 const pickr = Pickr.create({
     el: '.color-picker',
@@ -61,14 +90,15 @@ function createGrid(sizeMaximum) {
     
     
     for (let i = 1; i <= size * size; i++) {
-        const grid = document.querySelector("#gridContainer");
+        
         grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
         grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
         const div = document.createElement("div");
         div.classList.add("gridChild");
         grid.append(div);
 
-        div.addEventListener("mouseover", changeColor);
+        div.addEventListener("mouseover", changeColor)
+        
     }
 }
 
@@ -91,7 +121,7 @@ function colorPicker() {
     })
 
     randomBtn.addEventListener('click', () =>{
-        
+        return randomColor()
     })
 }
 
@@ -104,12 +134,8 @@ function changeColor(e) {
     colorPicker()
 
     if (!mousedown) {
-
-
-
-        if (thisStyle) {
             e.target.style.backgroundColor = thisStyle;
-        }
+        
     }
 
 
@@ -117,22 +143,31 @@ function changeColor(e) {
 }
 
 function randomColor(){
+    let randomColors = Math.floor(Math.random() *16777215).toString(16);
+
+    let colors = '#' + randomColors;
+
+    return thisStyle = colors * 256;
     
 }
-
-document.querySelector("body").addEventListener("mousedown", () => {
+body.addEventListener("mousedown", () => {
     mousedown = !mousedown;
     
     
 });
 
+function resetGrid(){
+    resetBtn.addEventListener('click', () =>{
+        grid.innerHTML = ''
+        slider()
+    })
+    
+}
+
 function startGrid(){
 createGrid(startSize)
+resetGrid()
 
-
-reset.addEventListener('click', () => {
-    location.reload()
-})
 
 
 }
