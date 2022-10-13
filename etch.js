@@ -8,31 +8,31 @@ const body = document.getElementById('body');
 const grid = document.querySelector("#gridContainer");
 const displayValue = document.getElementById('slider-value')
 let thisStyle = 'black'
-const startSize = rangeValue.value;
-
+const startSize = 16;
+displayValue.innerHTML = startSize + 'x' + startSize
 let mousedown = true;
 
 function slider(){
-    displayValue.innerHTML = startSize + 'x' + startSize
+    
     let value = rangeValue.value
-    if (value == 16){
-        displayValue.innerHTML = rangeValue.value + 'x' + rangeValue.value
+    if (value == 1){
+        displayValue.innerHTML = '16' + 'x' + '16'
         grid.innerHTML = ''
-        return createGrid(value)
-    }else if(value == 32){
-        displayValue.innerHTML = rangeValue.value + 'x' + rangeValue.value
+        return createGrid(16)
+    }else if(value == 2){
+        displayValue.innerHTML = '32' + 'x' + '32'
         grid.innerHTML = ''
-        return createGrid(value)
+        return createGrid(32)
         
-    }else if(value == 64){
-        displayValue.innerHTML = rangeValue.value + 'x' + rangeValue.value
+    }else if(value == 3){
+        displayValue.innerHTML = '64' + 'x' + '64'
         grid.innerHTML = ''
-        return createGrid(value)
+        return createGrid(64)
  
-    }else if(value == 128){
-        displayValue.innerHTML = rangeValue.value + 'x' + rangeValue.value
+    }else if(value == 4){
+        displayValue.innerHTML = '128' + 'x' + '128'
         grid.innerHTML = ''
-        return createGrid(value)
+        return createGrid(128)
         
     }
     
@@ -121,7 +121,16 @@ function colorPicker() {
     })
 
     randomBtn.addEventListener('click', () =>{
-        return randomColor()
+    grid.addEventListener('mouseover', () =>{
+    let r = Math.floor(Math.random() * 255);
+    let g = Math.floor(Math.random() * 255);
+    let b = Math.floor(Math.random() * 255);
+
+    let rainbowColor = 'rgb(' + r + "," + g + ',' + b + ')';
+            return thisStyle = rainbowColor
+        })
+    
+     
     })
 }
 
@@ -142,14 +151,7 @@ function changeColor(e) {
 
 }
 
-function randomColor(){
-    let randomColors = Math.floor(Math.random() *16777215).toString(16);
 
-    let colors = '#' + randomColors;
-
-    return thisStyle = colors * 256;
-    
-}
 body.addEventListener("mousedown", () => {
     mousedown = !mousedown;
     
