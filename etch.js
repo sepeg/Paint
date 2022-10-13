@@ -7,40 +7,36 @@ const randomBtn = document.getElementById('rainbow')
 const body = document.getElementById('body');
 const grid = document.querySelector("#gridContainer");
 const displayValue = document.getElementById('slider-value')
+
 let thisStyle = 'black'
 const startSize = 16;
 displayValue.innerHTML = startSize + 'x' + startSize
 let mousedown = true;
 
-function slider(){
-    
+function slider() {
+
     let value = rangeValue.value
-    if (value == 1){
+    if (value == 1) {
         displayValue.innerHTML = '16' + 'x' + '16'
         grid.innerHTML = ''
         return createGrid(16)
-    }else if(value == 2){
+    } else if (value == 2) {
         displayValue.innerHTML = '32' + 'x' + '32'
         grid.innerHTML = ''
         return createGrid(32)
-        
-    }else if(value == 3){
+
+    } else if (value == 3) {
         displayValue.innerHTML = '64' + 'x' + '64'
         grid.innerHTML = ''
         return createGrid(64)
- 
-    }else if(value == 4){
-        displayValue.innerHTML = '128' + 'x' + '128'
-        grid.innerHTML = ''
-        return createGrid(128)
-        
-    }
-    
+
+    } 
+
 }
 
 const pickr = Pickr.create({
     el: '.color-picker',
-    theme: 'nano', 
+    theme: 'nano',
     default: 'red',
 
     swatches: [
@@ -56,12 +52,12 @@ const pickr = Pickr.create({
 
     components: {
 
-       
+
         preview: true,
         opacity: true,
         hue: true,
 
-       
+
         interaction: {
             hex: true,
             rgba: true,
@@ -75,63 +71,70 @@ const pickr = Pickr.create({
 
 
 pickr.on('change', (color) => {
-    
+
     const rgbaColor = color.toRGBA().toString()
     console.log(rgbaColor)
-   
-    return thisStyle = rgbaColor
     
+    return thisStyle = rgbaColor
+
 })
 
 
 
 function createGrid(sizeMaximum) {
-        let size = sizeMaximum
-    
-    
+    let size = sizeMaximum
+
+
     for (let i = 1; i <= size * size; i++) {
-        
+
         grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
         grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
         const div = document.createElement("div");
+        
         div.classList.add("gridChild");
+        
         grid.append(div);
+
+       
 
         div.addEventListener("mouseover", changeColor)
         
+     
+     
     }
+
+    
 }
 
 
 
 
 function colorPicker() {
+
     
-    if(mousedown)
 
 
-   
+        blackBtn.addEventListener('click', () => {
+            
+                return thisStyle = 'black'
+            })
+       
 
-    blackBtn.addEventListener('click', () => {
-        return thisStyle ='black'
-    })
 
+    
     eraserBtn.addEventListener('click', () => {
-        return thisStyle = 'white'
+        
+            return thisStyle = 'white'
     })
+  
 
     randomBtn.addEventListener('click', () =>{
-    grid.addEventListener('mouseover', () =>{
-    let r = Math.floor(Math.random() * 255);
-    let g = Math.floor(Math.random() * 255);
-    let b = Math.floor(Math.random() * 255);
-
-    let rainbowColor = 'rgb(' + r + "," + g + ',' + b + ')';
-            return thisStyle = rainbowColor
-        })
-    
-     
+         return thisStyle = 'rainbow'
+        
     })
+    
+   
+
 }
 
 
@@ -139,12 +142,16 @@ function colorPicker() {
 
 
 
-function changeColor(e) {
+function changeColor() {
     colorPicker()
-
-    if (!mousedown) {
-            e.target.style.backgroundColor = thisStyle;
+   
+    
+    
+    if(thisStyle === 'rainbow'){
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    }else{
         
+        this.style.backgroundColor = thisStyle;
     }
 
 
@@ -154,21 +161,22 @@ function changeColor(e) {
 
 body.addEventListener("mousedown", () => {
     mousedown = !mousedown;
-    
-    
+
+
 });
 
-function resetGrid(){
-    resetBtn.addEventListener('click', () =>{
+function resetGrid() {
+    resetBtn.addEventListener('click', () => {
         grid.innerHTML = ''
         slider()
     })
-    
+
 }
 
-function startGrid(){
-createGrid(startSize)
-resetGrid()
+function startGrid() {
+    createGrid(startSize)
+    resetGrid()
+
 
 
 
