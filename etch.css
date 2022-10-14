@@ -5,7 +5,7 @@
   
   body {
     font-family: sans-serif;
-    
+    background-color: aquamarine;
     height: 100%;
   }
 .header{
@@ -29,6 +29,7 @@
     justify-content: center;
     align-items: center;
     border-style: solid;
+    background-color: white;
     
     
   
@@ -42,22 +43,67 @@
     user-select: none;
   }
 
-.buttons{
+.sliderContainer{
   display: flex;
   align-items: center;
   justify-content: center;
 }
-  .button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 
-  .color-picker{
-    border-radius: 10%;
-    padding: 10%;
-  }
-  
-  .pcr-button{
-    padding: 10%;
-  }
+.buttonContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  width: 800px;
+}
+
+
+button{
+  padding: 20px;
+  width: 150px;
+  border-radius: 15px;
+
+}
+
+.blackBtn{
+  background-color: black;
+  color: white;
+}
+.blackBtn:hover{
+  border-radius: 15px;
+  color: white;
+  box-shadow:
+    inset 0 0 50px rgb(0, 0, 0),      /* inner white */
+    inset 20px 0 80px rgb(0, 0, 0),   /* inner left magenta short */
+    inset -20px 0 80px rgb(0, 0, 0),  /* inner right cyan short */
+    inset 20px 0 300px rgb(0, 0, 0),  /* inner left magenta broad */
+    inset -20px 0 300px rgb(0, 0, 0), /* inner right cyan broad */
+    0 0 50px rgb(0, 0, 0),            /* outer white */
+    -10px 0 80px rgb(0, 0, 0),        /* outer left magenta */
+    10px 0 80px rgb(2, 2, 2);   
+
+}
+
+.eraserBtn:hover{
+  border-radius: 15px;
+  box-shadow:
+    inset 0 0 50px rgb(255, 255, 255),      /* inner white */
+    inset 20px 0 80px rgb(158, 153, 153),   /* inner left magenta short */
+    inset -20px 0 80px white,  /* inner right cyan short */
+    inset 20px 0 300px rgb(163, 162, 162),  /* inner left magenta broad */
+    inset -20px 0 300px white, /* inner right cyan broad */
+    0 0 50px rgb(179, 172, 172),            /* outer white */
+    -10px 0 80px rgb(190, 186, 186),        /* outer left magenta */
+    10px 0 80px white;   
+}
+
+.resetBtn:hover{
+  background-color: red;
+}
+
+ 

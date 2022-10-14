@@ -140,8 +140,14 @@ function changeColor() {
 
 //Game functions 
 
-document.body.onmousedown = () => (mousedown = true)
-document.body.onmouseup = () => (mousedown = false)
+body.addEventListener('mousedown', () =>{
+    mousedown = true;
+});
+
+body.addEventListener('mouseup', () =>{
+    mousedown = false
+})
+
 
 
 

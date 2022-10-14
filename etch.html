@@ -13,30 +13,33 @@
     <h1>Paint</h1>
   </div>
   <div class="gridbox">
+    
     <div class="gridContainer" id="gridContainer"></div>
   </div>
-    <div class="buttons">
+   
         
-        <div class="slidecontainer">
-          <label for="range">Change Size</label>
-            <input type="range" min="1" max="3" value="1" step="" class="slider" id="myRange" oninput="slider(startSize)" list="volsettings" >
-            <div id="slider-value">0</div>
-            <datalist id="volsettings">
-              <option>16</option>
-              <option>32</option>
-              <option>64</option>
-              <option>128</option>
-              
-              </datalist>
-          </div>
-
+    <div class="buttonContainer">   
+    <div class="buttons">
       <button class="blackBtn" id="blackBtn">Black</button>
       <button class="eraserBtn" id="eraserBtn">Eraser</button>
       <div class="color-picker"></div>
       <button class="rainbow" id="rainbow">Rainbow</button>
-      <button class="reset" id="reset">Reset</button>
+      <button class="resetBtn" id="reset">Reset</button>
     </div>
+  </div>  
 
+  <div class="sliderContainer">
+    <label for="range">Change Size:</label>
+      <input type="range" min="1" max="3" value="1" step="" class="slider" id="myRange" oninput="slider(startSize)" list="volsettings" >
+      <div id="slider-value">0</div>
+      <datalist id="volsettings">
+        <option>16</option>
+        <option>32</option>
+        <option>64</option>
+        <option>128</option>
+        
+        </datalist>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
     <script src="etch.js"></script>
   </body>
