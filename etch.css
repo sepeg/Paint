@@ -5,7 +5,7 @@
   
   body {
     font-family: sans-serif;
-    background-color: aquamarine;
+    background-color: #233142;
     height: 100%;
   }
 .header{
@@ -16,7 +16,10 @@
   h1{
     align-items: center;
     justify-content: center;
-    
+    color: white;
+    font-size: 50px;
+    letter-spacing: 3px;
+    font-weight: bolder;
   }
   
   .gridbox{
@@ -49,6 +52,20 @@
   justify-content: center;
 }
 
+label{
+  color: white;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.slider-value{
+  color: white;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+
+
 .buttonContainer{
   display: flex;
   align-items: center;
@@ -67,7 +84,8 @@ button{
   padding: 20px;
   width: 150px;
   border-radius: 15px;
-
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .blackBtn{
@@ -112,5 +130,6 @@ button{
   justify-content: center;
   height: 100px;
   font-size: 20px;
+  color: white;
 }
 

@@ -7,11 +7,11 @@ const eraserBtn = document.getElementById("eraserBtn");
 const randomBtn = document.getElementById('rainbow')
 const body = document.getElementById('body');
 const grid = document.querySelector("#gridContainer");
-const displayValue = document.getElementById('slider-value')
+const displayValue = document.getElementById('slider-value');
 
-let thisStyle = 'black'
+let thisStyle = 'black';
 const startSize = 16;
-displayValue.innerHTML = startSize + 'x' + startSize
+displayValue.innerHTML = startSize + 'x' + startSize;
 let mousedown = false;
 
 //slider function and choose your own color.
@@ -76,14 +76,14 @@ pickr.on('change', (color) => {
 
     const rgbaColor = color.toRGBA().toString()
     
-    return thisStyle = rgbaColor
+    return thisStyle = rgbaColor;
 
 })
 
 
 //set size of grid
 function createGrid(sizeMaximum) {
-    let size = sizeMaximum
+    let size = sizeMaximum;
 
 
     for (let i = 1; i <= size * size; i++) {
@@ -98,8 +98,8 @@ function createGrid(sizeMaximum) {
 
        
 
-        div.addEventListener('mouseover', changeColor) 
-        div.addEventListener('mousedown', changeColor)
+        div.addEventListener('mouseover', changeColor);
+        div.addEventListener('mousedown', changeColor);
     }
    
 }
@@ -111,16 +111,16 @@ function colorPicker() {
 
     blackBtn.addEventListener('click', () => {
             
-     return thisStyle = 'black'
+     return thisStyle = 'black';
      })
        
     eraserBtn.addEventListener('click', () => {
         
-    return thisStyle = 'white'
+    return thisStyle = 'white';
     })
     randomBtn.addEventListener('click', () =>{
 
-    return thisStyle = 'rainbow'
+    return thisStyle = 'rainbow';
         
     })  
 }
@@ -147,7 +147,7 @@ body.addEventListener('mousedown', () =>{
 
 body.addEventListener('mouseup', () =>{
     mousedown = false
-})
+});
 
 
 
@@ -160,8 +160,8 @@ function resetGrid() {
 }
 
 function startGrid() {
-    createGrid(startSize)
-    resetGrid()
+    createGrid(startSize);
+    resetGrid();
 }
 
 startGrid()
