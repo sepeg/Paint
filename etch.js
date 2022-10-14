@@ -1,3 +1,4 @@
+//global variables
 const resetBtn = document.getElementById('reset')
 const rangeValue = document.getElementById('myRange');
 const blackBtn = document.getElementById("blackBtn");
@@ -11,7 +12,7 @@ const displayValue = document.getElementById('slider-value')
 let thisStyle = 'black'
 const startSize = 16;
 displayValue.innerHTML = startSize + 'x' + startSize
-let mousedown = true;
+let mousedown = false;
 
 function slider() {
 
@@ -73,14 +74,13 @@ const pickr = Pickr.create({
 pickr.on('change', (color) => {
 
     const rgbaColor = color.toRGBA().toString()
-    console.log(rgbaColor)
     
     return thisStyle = rgbaColor
 
 })
 
 
-
+//set size of grid
 function createGrid(sizeMaximum) {
     let size = sizeMaximum
 
@@ -97,89 +97,64 @@ function createGrid(sizeMaximum) {
 
        
 
-        div.addEventListener("mouseover", changeColor)
-        
-     
-     
+        div.addEventListener('mouseover', changeColor) 
+        div.addEventListener('mousedown', changeColor)
     }
-
-    
+   
 }
 
 
 
-
+//change color to the brush
 function colorPicker() {
 
-    
-
-
-        blackBtn.addEventListener('click', () => {
+    blackBtn.addEventListener('click', () => {
             
-                return thisStyle = 'black'
-            })
+     return thisStyle = 'black'
+     })
        
-
-
-    
     eraserBtn.addEventListener('click', () => {
         
-            return thisStyle = 'white'
+    return thisStyle = 'white'
     })
-  
-
     randomBtn.addEventListener('click', () =>{
-         return thisStyle = 'rainbow'
+
+    return thisStyle = 'rainbow'
         
-    })
-    
-   
-
+    })  
 }
-
-
 
 
 
 
 function changeColor() {
-    colorPicker()
-   
-    
-    
+    colorPicker() 
+    if(mousedown)
     if(thisStyle === 'rainbow'){
         this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
     }else{
         
         this.style.backgroundColor = thisStyle;
     }
-
-
-
 }
 
+//Game functions 
 
-body.addEventListener("mousedown", () => {
-    mousedown = !mousedown;
+document.body.onmousedown = () => (mousedown = true)
+document.body.onmouseup = () => (mousedown = false)
 
 
-});
 
 function resetGrid() {
     resetBtn.addEventListener('click', () => {
         grid.innerHTML = ''
         slider()
     })
-
 }
 
 function startGrid() {
     createGrid(startSize)
     resetGrid()
-
-
-
-
 }
 
 startGrid()
