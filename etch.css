@@ -36,10 +36,12 @@
     width: 800px;
   }
   .gridChild {
-    
+    color: #fff;
     height: 100%;
     width: 100%;
+    user-select: none;
   }
+
 .buttons{
   display: flex;
   align-items: center;
