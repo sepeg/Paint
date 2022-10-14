@@ -14,6 +14,7 @@ const startSize = 16;
 displayValue.innerHTML = startSize + 'x' + startSize
 let mousedown = false;
 
+//slider function and choose your own color.
 function slider() {
 
     let value = rangeValue.value
