@@ -64,6 +64,10 @@ label{
   letter-spacing: 3px;
 }
 
+.slider{
+  cursor: pointer;
+  
+}
 
 
 .buttonContainer{
@@ -86,6 +90,7 @@ button{
   border-radius: 15px;
   font-size: 20px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .blackBtn{
