@@ -101,13 +101,13 @@ button{
   border-radius: 15px;
   color: white;
   box-shadow:
-    inset 0 0 50px rgb(0, 0, 0),      /* inner white */
-    inset 20px 0 80px rgb(0, 0, 0),   /* inner left magenta short */
-    inset -20px 0 80px rgb(0, 0, 0),  /* inner right cyan short */
-    inset 20px 0 300px rgb(0, 0, 0),  /* inner left magenta broad */
-    inset -20px 0 300px rgb(0, 0, 0), /* inner right cyan broad */
-    0 0 50px rgb(0, 0, 0),            /* outer white */
-    -10px 0 80px rgb(0, 0, 0),        /* outer left magenta */
+    inset 0 0 50px rgb(0, 0, 0),      
+    inset 20px 0 80px rgb(0, 0, 0),   
+    inset -20px 0 80px rgb(0, 0, 0),  
+    inset 20px 0 300px rgb(0, 0, 0),  
+    inset -20px 0 300px rgb(0, 0, 0), 
+    0 0 50px rgb(0, 0, 0),         
+    -10px 0 80px rgb(0, 0, 0),       
     10px 0 80px rgb(2, 2, 2);   
 
 }
@@ -115,13 +115,13 @@ button{
 .eraserBtn:hover{
   border-radius: 15px;
   box-shadow:
-    inset 0 0 50px rgb(255, 255, 255),      /* inner white */
-    inset 20px 0 80px rgb(158, 153, 153),   /* inner left magenta short */
-    inset -20px 0 80px white,  /* inner right cyan short */
-    inset 20px 0 300px rgb(163, 162, 162),  /* inner left magenta broad */
-    inset -20px 0 300px white, /* inner right cyan broad */
-    0 0 50px rgb(179, 172, 172),            /* outer white */
-    -10px 0 80px rgb(190, 186, 186),        /* outer left magenta */
+    inset 0 0 50px rgb(255, 255, 255),      
+    inset 20px 0 80px rgb(158, 153, 153),   
+    inset -20px 0 80px white, 
+    inset 20px 0 300px rgb(163, 162, 162),  
+    inset -20px 0 300px white, 
+    0 0 50px rgb(179, 172, 172),            
+    -10px 0 80px rgb(190, 186, 186),        
     10px 0 80px white;   
 }
 
